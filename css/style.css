@@ -6,7 +6,7 @@ body {
   p {font-size: 16px;}
   margin {margin-bottom: 45px;}
   bg-1 { 
-      background-image: url("bitcoin.jpg")
+      background-image: url(css/bitcoin.jpg)
       /*background-color: #1abc9c; /* Green */
       color: #ffffff;
   }
