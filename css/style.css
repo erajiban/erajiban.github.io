@@ -1,59 +1,39 @@
-/* 
- * Copyright (c) 2014, E-mProvement, All rights reserved.
- *
- */
-
-
-body > .container{
-	padding-top: 35px;
-}
-
-
-img{
-	max-width: 100%;
-}
-
-blockquote {
-	word-wrap: break-word;
-}
-
-
-/* ******** FOOTER HOMEPAGE ********  */
-footer {
-	width: 100%;
-	margin: 0 auto;
-	background: #555555;
-	
-}
-
-footer ul {
-	list-style: none;
-	width: 100%;
-	padding-top: 5px;
-} 
-
-footer ul li {
-	float: left;
-	margin: 0 auto 0 auto;
-	padding: 0 0 0 0;
-	width: 25%;
-}
-
-@media all and (max-width: 540px){
-	footer li {
-		float: left;
-		width: 100%;
-		margin: 1% 0 1% 0;
-	}
-}
-
-footer li a, footer li a:visited, footer a:link, footer a:active {
-	display: block;
-	color: white;
-	text-align: center;
-}
-
-footer li a:hover {
-	color: #f08000;
-	text-decoration: none;
-}
+body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+  }
+  .bg-2 { 
+      background-color: #474e5d; /* Dark Blue */
+      color: #ffffff;
+  }
+  .bg-3 { 
+      background-color: #ffffff; /* White */
+      color: #555555;
+  }
+  .bg-4 { 
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+  }
+  .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+  .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+  }
