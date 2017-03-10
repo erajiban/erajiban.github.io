@@ -14,6 +14,11 @@ body, html{
 	}
 }
 
+.scroll{
+	height: 270px;
+	overflow: scroll;
+}
+
 
 h2{
 	line-height: 20px;
