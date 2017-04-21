@@ -138,4 +138,5 @@ function homePageLoading() {
     url = 'https://bitcoin.mubiz.com/peerinfo';
     element = 'peerinfo';
     requeteApiWS(url, element);
+    
 }
