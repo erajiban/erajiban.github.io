@@ -30,28 +30,6 @@ function requeteApiWS(monapiURL, elementiD){
     xmlhttp.send();
 }
 
-/*function Valider(elementiD, resultat) {
-    var url;
-    alert(document.getElementById("adresse").value);
-    alert(elementiD);
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var myObj = this.responseText;
-            alert(elementiD); //Fonctionne pas
-            if(elementiD=='adresse') {
-                alert(elementiD);
-                url = 'http://bitcoin.mubiz.com/address/' + document.getElementById("adresse").value + '/';
-                alert(url);
-                var jsonPretty = JSON.stringify(JSON.parse(myObj), null, 2);
-                document.getElementById(resultat).innerHTML = jsonPretty;
-            }
-        }
-    };
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-    alert(url);
-}*/
 
 //API Page Explorer
 function VerificationAdd(adresse) {
@@ -69,9 +47,8 @@ function ValiderAdd() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            var myObj = this.responseText;
-            var jsonPretty = JSON.stringify(JSON.parse(myObj), null, 2);
-            document.getElementById("resultatAdd").innerHTML = jsonPretty;
+            var myObj = JSON.parse(this.responseText);
+            document.getElementById("resultatAdd").innerHTML=" Hash160 : " + myObj.hash160 +"\n Adresse : "+ myObj.address+ "\n Total Reçu : " + myObj.total_received + "\n Total envoyé : "+myObj.total_send+ "\n Balance finale : "+myObj.final_balance;
         }
     };
     xmlhttp.open("GET", a, true);
@@ -98,9 +75,8 @@ function ValiderHB() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            var myObj = this.responseText;
-            var jsonPretty = JSON.stringify(JSON.parse(myObj), null, 2);
-            document.getElementById("resultatHB").innerHTML = jsonPretty;
+            var myObj = JSON.parse(this.responseText);
+            document.getElementById("resultatHB").innerHTML=" Hash : " + myObj.hash +"\n Confirmations : "+ myObj.confirmations+ "\n Time : " + myObj.time + "\n Median Time : "+myObj.mediantime+ "\n Bits : "+myObj.bits+ "\n Previous block hash : "+myObj.previousblockhash+ "\n Next block hash : "+myObj.nextblockhash;
         }
     };
     xmlhttp.open("GET", a, true);
@@ -112,9 +88,8 @@ function ValiderIB() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            var myObj = this.responseText;
-            var jsonPretty = JSON.stringify(JSON.parse(myObj), null, 2);
-            document.getElementById("resultatIB").innerHTML = jsonPretty;
+            var myObj = JSON.parse(this.responseText);
+            document.getElementById("resultatIB").innerHTML=" Bloc hash : " + myObj.block_hash;
         }
     };
     xmlhttp.open("GET", a, true);
@@ -123,11 +98,11 @@ function ValiderIB() {
 
 //Affichage joli JSON
 /*function output(inp) {
-    document.body.appendChild(document.createElement('pre')).innerHTML = inp;
+    document.body.appendChild(document.createElement('test')).innerHTML = inp;
 }
 
 function syntaxHighlight(json) {
-    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    json = json.replace(/&/g, '&').replace(//g, '>');
     return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
         var cls = 'number';
         if (/^"/.test(match)) {
@@ -144,8 +119,7 @@ function syntaxHighlight(json) {
         return '<span class="' + cls + '">' + match + '</span>';
     });
 }
-var obj = {a:1, 'b':'foo', c:[false,'false',null, 'null', {d:{e:1.3e5,f:'1.3e5'}}]};
-var str = JSON.stringify(obj, undefined, 4);
+
 output(str);
 output(syntaxHighlight(str));*/
 
